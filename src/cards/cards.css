@@ -1,0 +1,41 @@
+.cont {
+    position: relative;
+    top: 10vh;
+}
+
+.flexBox {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardGap {
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important; 
+}
+
+.social {
+    color:  #18778c !important;
+    font-weight: 600;
+}
+
+.social:hover{
+    color: #ca22bb !important;
+}
+
+.card-subtitle {
+    margin-top: 0;
+    text-align: center;
+}
+
+.navbar-foot {
+    flex-basis: auto !important;
+}
+
+.navbar-input {
+    width: auto !important;
+}
