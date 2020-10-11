@@ -5,11 +5,13 @@ let logoutTimer;
 const useAuth = () => {
   const [pId, setPId] = useState();
   const [token, setToken] = useState();
+  const [email, setEmail] = useState();
   const [tokenExpiration, setTokenExpiration] = useState();
 
-  const logIn = useCallback((person, pToken, tExpiration) => {
+  const logIn = useCallback((person, pToken, email, tExpiration) => {
     setPId(person);
     setToken(pToken);
+    setEmail(email);
     const after3Hours = new Date().getTime() + 1000 * 60 * 60 * 3;
     const expiration = tExpiration || new Date(after3Hours);
     setTokenExpiration(expiration);
@@ -17,6 +19,7 @@ const useAuth = () => {
     const data = {
       pId: person,
       token: pToken,
+      email: email,
       expiration: expiration.toISOString(),
     };
 
@@ -26,6 +29,7 @@ const useAuth = () => {
   const logOut = useCallback(() => {
     setPId(null);
     setToken(null);
+    setEmail(null);
     setTokenExpiration(null);
     localStorage.removeItem("EBCData");
   }, []);
@@ -40,21 +44,22 @@ const useAuth = () => {
     }
   }, [token, tokenExpiration, logOut]);
 
-  useEffect(() => {
+  const autoLogin = useCallback(() => {
     const storedData = JSON.parse(localStorage.getItem("EBCData"));
-    if (storedData) {
-      const isValid = new Date(storedData.expiration) > new Date();
-      if (storedData && storedData.token && isValid) {
-        logIn(
-          storedData.pId,
-          storedData.token,
-          new Date(storedData.expiration)
-        );
-      }
+    if (!storedData) return;
+
+    const isValid = new Date(storedData.expiration) > new Date();
+    if (storedData && storedData.token && isValid) {
+      logIn(
+        storedData.pId,
+        storedData.token,
+        storedData.email,
+        new Date(storedData.expiration)
+      );
     }
   }, [logIn]);
 
-  return { pId, token, logIn, logOut };
+  return { pId, token, email, logIn, logOut, autoLogin };
 };
 
 export default useAuth;

@@ -70,3 +70,12 @@ p {
     background-color: #ffd7ff !important;
     color: #18778c !important;
 }
+
+.btn-mode {
+    background-color: #18778c !important;
+    color: #e8ebec !important;
+}
+
+.btn-mode:hover {
+    background-color: #15748a !important;
+}

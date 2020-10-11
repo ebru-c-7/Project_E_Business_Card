@@ -3,9 +3,28 @@
     top: 10vh;
 }
 
-.flexBox {
-    display: flex;
-    justify-content: space-around;
+.card-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.card-button>button {
+    padding: 5px 5px !important;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #0069d9;
+    color: #fff;
+}
+
+.card-body {
+    padding: 1.5rem 0.2rem !important;
+}
+
+.social-media {
+    display: flex !important;
+    justify-content: space-around !important;
 }
 
 .cardGap {
@@ -38,4 +57,16 @@
 
 .navbar-input {
     width: auto !important;
+}
+
+.form-logo-clearButton {
+    position: absolute;
+    right: -12%;
+    padding: 0;
+    background-color: transparent;
+    color: rgb(197, 10, 10);
+    font-size: larger;
+    font-weight: bold;
+    border: none;
+    top: -15%;
 }

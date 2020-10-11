@@ -19,10 +19,10 @@ const Home = () => {
       </Row>
       <hr />
       <Row style={{ marginTop: "20px" }} className="justify-content-center">
-        <Col xs md={4} lg={4}>
-          <Image src={imgItem1} roundedCircle style={{ height: "250px" }} />
+        <Col sm={12} md={5} lg={4}>
+          <Image src={imgItem1} roundedCircle style={{ height: "200px" }} />
         </Col>
-        <Col xs md={6} lg={4}>
+        <Col sm={12} md={6} lg={5}>
           <h3>Join US Today!</h3>
           <p>
             To start enjoying a virtual business card portfolio, join us today

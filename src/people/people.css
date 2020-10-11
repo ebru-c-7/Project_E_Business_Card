@@ -1,0 +1,33 @@
+.btn-new-card {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    font-size: 13px;
+    padding: 0;
+    font-weight: bold;
+    background-color: #18778c !important;
+    border: none;
+}
+
+.btn-new-card:hover {
+    background-color: #ca22bb !important;
+}
+
+.cardGap {
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.fixed-bottom-btn {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1030;
+}
+
+.accordion-button {
+    font-weight: bold;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.1rem;
+    color: #212529;
+}

@@ -40,6 +40,7 @@ const useHttp = () => {
       } catch (err) {
         setError(err.message);
         setIsLoading(false);
+        console.log(err);
         throw err;
       }
     },
