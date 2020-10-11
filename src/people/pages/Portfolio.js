@@ -42,7 +42,7 @@ const Portfolio = () => {
     const fetchCards = async () => {
       try {
         const responseData = await sendHttpRequest(
-          `http://localhost:5000/people/${auth.pId}`
+          `${process.env.REACT_APP_BACKEND_URL}/people/${auth.pId}`
         );
         setLoadedCards(responseData.cards);
         setName(responseData.person.name);
@@ -58,7 +58,7 @@ const Portfolio = () => {
   const cardEditHandler = async (ecid) => {
     try {
       const responseData = await sendHttpRequest(
-        `http://localhost:5000/ebcards/${ecid}`
+        `${process.env.REACT_APP_BACKEND_URL}/ebcards/${ecid}`
       );
       setCard(responseData.card);
       modalShowHandler();
@@ -70,7 +70,7 @@ const Portfolio = () => {
   const cardDeleteHandler = async (ecid) => {
     try {
       await sendHttpRequest(
-        `http://localhost:5000/ebcards/${ecid}`,
+        `${process.env.REACT_APP_BACKEND_URL}/ebcards/${ecid}`,
         "DELETE",
         null, //body
         { Authorization: "Bearer " + auth.token }
@@ -91,7 +91,7 @@ const Portfolio = () => {
 
     try {
      await sendHttpRequest(
-        `http://localhost:5000/ebcards/status/${ecid}`,
+        `${process.env.REACT_APP_BACKEND_URL}/ebcards/status/${ecid}`,
         "PATCH",
         null,
         headers
@@ -105,7 +105,7 @@ const Portfolio = () => {
   const removeFromFavHandler = async (ecid) => {
     try {
       await sendHttpRequest(
-        `http://localhost:5000/ebcards/favorites/${ecid}`,
+        `${process.env.REACT_APP_BACKEND_URL}/ebcards/favorites/${ecid}`,
         "DELETE",
         null, //body
         { Authorization: "Bearer " + auth.token } //header

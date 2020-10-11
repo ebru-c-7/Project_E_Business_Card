@@ -29,7 +29,7 @@ const Auth = (props) => {
 
     try {
       const responseData = await sendHttpRequest(
-        "http://localhost:5000/people/authenticate/login",
+        `${process.env.REACT_APP_BACKEND_URL}/people/authenticate/login`,
         "POST",
         body,
         headers
@@ -54,7 +54,7 @@ const Auth = (props) => {
     let token, pId;
     try {
       const responseData = await sendHttpRequest(
-        "http://localhost:5000/people/authenticate/signup",
+        `${process.env.REACT_APP_BACKEND_URL}/people/authenticate/signup`,
         "POST",
         body,
         headers
@@ -83,7 +83,7 @@ const Auth = (props) => {
 
     try {
       await sendHttpRequest(
-        "http://localhost:5000/ebcards/" + email,
+        `${process.env.REACT_APP_BACKEND_URL}/ebcards/${email}`,
         "POST",
         body,
         { Authorization: "Bearer " + token }

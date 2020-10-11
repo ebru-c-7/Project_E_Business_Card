@@ -38,7 +38,7 @@ const EBCardItem = (props) => {
             variant="top"
             style={{ width: "5rem", marginRight: "0.6rem" }}
             src={
-              props.logoImg ? `http://localhost:5000/${props.logoImg}` : ImgItem
+              props.logoImg ? `${process.env.REACT_APP_BACKEND_URL}/${props.logoImg}` : ImgItem
             }
           />
           <div

@@ -26,7 +26,7 @@ const EBCards = () => {
     const fetchCards = async () => {
       try {
         const responseData = await sendHttpRequest(
-          `http://localhost:5000/ebcards/` //only active cards
+          `${process.env.REACT_APP_BACKEND_URL}/ebcards/`
         );
         setLoadedCards(responseData.cards);
       } catch (err) {
@@ -38,7 +38,7 @@ const EBCards = () => {
         ); 
         try {
           const responseData = await sendHttpRequest(
-            `http://localhost:5000/people/${auth.pId}`
+            `${process.env.REACT_APP_BACKEND_URL}/people/${auth.pId}`
           );
           setFavCards(responseData.favcards.map((card) => card.id));
         } catch (err) {
@@ -73,7 +73,7 @@ const EBCards = () => {
     if (!auth.token) return;
     try {
       let responseData = await sendHttpRequest(
-        `http://localhost:5000/ebcards/favorites/${ecid}`,
+        `${process.env.REACT_APP_BACKEND_URL}/ebcards/favorites/${ecid}`,
         "POST",
         null, //body
         { Authorization: "Bearer " + auth.token } //header
@@ -89,7 +89,7 @@ const EBCards = () => {
     if (!auth.token) return;
     try {
       await sendHttpRequest(
-        `http://localhost:5000/ebcards/favorites/${ecid}`,
+        `${process.env.REACT_APP_BACKEND_URL}/ebcards/favorites/${ecid}`,
         "DELETE",
         null, //body
         { Authorization: "Bearer " + auth.token } //header

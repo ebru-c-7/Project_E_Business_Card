@@ -46,7 +46,7 @@ const NewCardModal = (props) => {
 
     try {
       await sendHttpRequest(
-        "http://localhost:5000/ebcards/" + ecid,
+        `${process.env.REACT_APP_BACKEND_URL}/ebcards/${ecid}`,
         "PATCH",
         body,
         headers
@@ -72,7 +72,7 @@ const NewCardModal = (props) => {
 
     try {
       await sendHttpRequest(
-        "http://localhost:5000/ebcards/" + email,
+        `${process.env.REACT_APP_BACKEND_URL}/ebcards/${email}`,
         "POST",
         body,
         { Authorization: "Bearer " + token }
