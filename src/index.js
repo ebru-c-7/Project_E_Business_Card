@@ -5,7 +5,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./assets/style/layout.css";
+import "./assets/style/framework.css";
+import "./assets/style/fontawesome-free/css/fontawesome-all.min.css";
 import "./index.css";
+
 
 ReactDOM.render(<App />, document.getElementById('root')
 );

@@ -4,7 +4,7 @@ import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
 import useAuth from "./shared/hooks/auth-hook";
 import { AuthContext } from "./shared/context/context";
 
-import MainNavigation from "./shared/components/Navigation/MainNavigation";
+// import Navbar from "./shared/components/Navigation/Navbar";
 import "./App.css";
 
 const EBCards = lazy(() => import("./cards/pages/EBCards"));
@@ -60,7 +60,7 @@ const App = () => {
       }}
     >
       <BrowserRouter>
-        <MainNavigation />
+        {/* <Navbar /> */}
         <Suspense fallback={<h1>Loading…</h1>}>{routes}</Suspense>
       </BrowserRouter>
     </AuthContext.Provider>
