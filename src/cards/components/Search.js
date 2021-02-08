@@ -14,13 +14,14 @@ const Search = (props) => {
   };
 
   return (
-    <Navbar fixed="bottom" bg="light" variant="light" expand="sm">
+    <Navbar fixed="bottom" bg="light" variant="light" expand="sm" className="navbar-mobile">
       <Navbar.Collapse
         className="justify-content-center navbar-foot"
         id="search-bar"
       >
         <Form inline onSubmit={(e)=>props.search(e, search)}>
           <Form.Control
+            className="filter-mobile"
             as="select"
             name="filter"
             onChange={(e) => searchChangeHandler(e, "filter")}
@@ -33,17 +34,21 @@ const Search = (props) => {
           <Form.Control
             type="text"
             placeholder="Search"
-            className="mr-sm-2 navbar-input"
+            className="mr-sm-2 navbar-input search-mobile"
             onChange={(e) => searchChangeHandler(e, "keyword")}
           />
           <Button
             type="submit"
+            className="button-search"
             variant="outline-success"
             style={{ margin: "0 0.5rem" }}
           >
             Search
           </Button>
-          <Button onClick={props.clear} variant="outline-danger">
+          <Button 
+            className="button-filter"
+            onClick={props.clear} 
+            variant="outline-danger">
             Clear Filter
           </Button>
         </Form>

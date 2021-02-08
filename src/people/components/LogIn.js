@@ -19,7 +19,7 @@ const LogIn = (props) => {
       setValidated(true);
       props
         .onLogin(event, email, password)
-        .then((res) => console.log(res))
+        .then()
         .catch((err) => console.log(err));
     }
   };

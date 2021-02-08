@@ -12,7 +12,7 @@ import ErrorModal from "../../shared/UI/ErrorModal";
 import Search from "../components/Search";
 
 import "../cards.css";
-
+ 
 const EBCards = () => {
   const auth = useContext(AuthContext);
 
