@@ -97,12 +97,18 @@ const Auth = (props) => {
   return (
     <React.Fragment>
       <ErrorModal show={!!error} onHide={clearError} errorMessage={error} />
-
+      <div className="wrapper row3">
+      <main className="hoc container clear"> 
+      <div className="content"> 
       <Container fluid="md" className="main-part">
         {isLoading && <LoadingSpinner asOverlay />}
         {mode === "login" && <LogIn onLogin={logInHandler} />}
         {mode === "signup" && <SignUp onSignup={signUpHandler} />}
       </Container>
+      
+      </div>
+      </main>
+      </div>
     </React.Fragment>
   );
 };

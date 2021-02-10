@@ -60,7 +60,7 @@ const ImageUpload = (props) => {
           onChange={pickedHandler}
           accept=".jpg,.png,.jpeg"
           id="custom-file"
-          label="Opt: your company logo"
+          label="Opt: logo"
           lang="en"
           custom
           isInvalid={!!error}

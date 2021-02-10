@@ -7,6 +7,8 @@ import Button from "react-bootstrap/Button";
 import useCard from "../../shared/hooks/card-hook";
 import NewCard from "../../cards/components/NewCard";
 
+import "../people.css";
+
 const SignUp = (props) => {
   const [validated, setValidated] = useState(false);
   const [email, setEmail] = useState();

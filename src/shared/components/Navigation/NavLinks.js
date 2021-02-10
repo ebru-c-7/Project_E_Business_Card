@@ -38,7 +38,10 @@ const NavLinks = () => {
       )}
       {auth.isLoggedIn && (
         <li>
-          <NavLink onClick={auth.logout}>Logout</NavLink>
+          <NavLink to="/logout" onClick={(e)=>{
+            e.preventDefault();
+            auth.logout()
+            }}>Logout</NavLink>
         </li>
       )}
     </React.Fragment>

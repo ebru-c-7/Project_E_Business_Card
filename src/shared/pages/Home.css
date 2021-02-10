@@ -1,7 +1,3 @@
-.bgded {
-    background-image: url("../../assets/images/ready.jpg");
-}
-
 .btn:hover {
     background-color: #FFB900;
 }
@@ -9,3 +5,4 @@
 p {
     white-space: break-spaces;
 }
+

@@ -9,14 +9,14 @@
     top: 0;
 }
 
+.card a:hover {
+    color: #FFB900 !important;
+}
+
 .card-button>button {
     padding: 5px 5px !important;
 }
 
-.dropdown-item:focus, .dropdown-item:hover {
-    background-color: #0069d9;
-    color: #fff;
-}
 
 .card-body {
     padding: 1.5rem 0.2rem !important;
@@ -27,15 +27,6 @@
     justify-content: space-around !important;
 }
 
-.cardGap {
-    column-gap: 10px;
-    row-gap: 10px;
-}
-
-.row {
-    margin-right: 0px !important;
-    margin-left: 0px !important; 
-}
 
 .social {
     color:  #18778c !important;
@@ -43,7 +34,7 @@
 }
 
 .social:hover{
-    color: #ca22bb !important;
+    color: #FFB900 !important;
 }
 
 .card-subtitle {
@@ -81,12 +72,12 @@
     }
     
     .filter-mobile {
-        width: 35%;
+        width: 30%;
         font-size: smaller;
     }
 
     .search-mobile {
-        width: 25% !important;
+        width: 20% !important;
         font-size: smaller;
     }
 
@@ -95,15 +86,19 @@
         border-radius: 50%;
         padding: 10px 5px;
         font-size: smaller;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
 
     .button-filter {
         font-size: smaller;
         border-radius: 50%;
         padding: 5px;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
+}
+
+.form-inline {
+    justify-content: space-around !important;
 }

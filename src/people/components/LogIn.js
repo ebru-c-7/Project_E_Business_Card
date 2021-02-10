@@ -4,6 +4,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
+import "../people.css";
+
 const LogIn = (props) => {
   const [validated, setValidated] = useState(false);
   const [email, setEmail] = useState();

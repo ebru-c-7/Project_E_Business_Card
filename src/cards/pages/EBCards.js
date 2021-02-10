@@ -12,7 +12,7 @@ import ErrorModal from "../../shared/UI/ErrorModal";
 import Search from "../components/Search";
 
 import "../cards.css";
- 
+
 const EBCards = () => {
   const auth = useContext(AuthContext);
 
@@ -35,7 +35,7 @@ const EBCards = () => {
       if (auth.token) {
         setLoadedCards((prevCards) =>
           prevCards.filter((card) => card.creator.id !== auth.pId)
-        ); 
+        );
         try {
           const responseData = await sendHttpRequest(
             `${process.env.REACT_APP_BACKEND_URL}/people/${auth.pId}`
@@ -48,7 +48,7 @@ const EBCards = () => {
     };
 
     fetchCards();
-  }, [sendHttpRequest, auth]); 
+  }, [sendHttpRequest, auth]);
 
   const searchHandler = (event, search) => {
     event.preventDefault();
@@ -103,24 +103,25 @@ const EBCards = () => {
   return (
     <React.Fragment>
       <ErrorModal show={!!error} onHide={clearError} errorMessage={error} />
-      {isLoading && (
-        <div className="center">
-          <LoadingSpinner asOverlay />
-        </div>
-      )}
-
-      {!isLoading && loadedCards && (
-        <Container fluid style={{ position: "relative", top: "10vh" }}>
-          <Row className="cardGap justify-content-center">
+      <Container
+        fluid
+        style={{ backgroundColor: "#e0dadae0", minHeight: "50vh" }}
+      >
+        <Row className="justify-content-center">
+          {isLoading ? (
+            <div className="center">
+              <LoadingSpinner asOverlay />
+            </div>
+          ) : (
             <EBCardList
               favCards={favCards}
               cards={filteredCards || loadedCards}
               onAdd={addToFavHandler}
               onRemove={removeFromFavHandler}
             />
-          </Row> 
-        </Container>
-      )}
+          )}
+        </Row>
+      </Container>
 
       <Search
         search={searchHandler}

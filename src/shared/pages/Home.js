@@ -1,66 +1,49 @@
 import React from "react";
 
-import Navbar from "../components/Navigation/Navbar";
+// import Navbar from "../components/Navigation/Navbar";
 
 import imgItem1 from "../../assets/business/share-with.jpg";
 import imgItem2 from "../../assets/business/share.jpg";
 
 import "./Home.css";
 
-const Home = () => {
+const Home = (props) => { 
   return (
     <React.Fragment>
-      <div className="bgded overlay">
-        <Navbar />
-        <div id="pageintro" className="hoc clear">
-          <article>
-            <h3 className="heading">E-Business Cards</h3>
-            <p>
-              We have brought a new approach to business cards through making
-              them more accessable, less costly and environment-friendly.
-            </p>
-            <footer>
-              <a className="btn" href="/people/authenticate/signup">
-                Join Us
-              </a>
-            </footer>
-          </article>
-        </div>
-      </div>
-      <div class="wrapper row3">
-        <main class="hoc container clear">
-          <div class="sectiontitle">
-            <h6 class="heading font-x3">Create Your Own Portfolio</h6>
+      <div className="wrapper row3">
+        <main className="hoc container clear">
+          <div className="sectiontitle">
+            <h6 className="heading font-x3">Create Your Own Portfolio</h6>
             <p>
               Do you know that not only can you create your own cards, but also
               you can add other cards to your portfolio?
             </p>
           </div>
-          <div class="posts">
-            <figure class="group">
+          <div className="posts">
+            <figure className="group">
               <div>
                 <img src={imgItem1} alt="sharing cards" />
               </div>
               <figcaption>
-                <h6 class="heading">Already a member?</h6>
+                <h6 className="heading">Already a member?</h6>
                 <p>
                   To start enjoying a virtual business card portfolio, login now
                   and create your card(s). {"\n\n"}
                   Don't forget to add the cards you need to your portfolio!
                 </p>
-                <footer>
-                  <a class="btn" href="people/authenticate/login">
+                {!props.isLogin && <footer>
+                  <a className="btn" href="people/authenticate/login">
                     Login
                   </a>
-                </footer>
+                </footer>}
               </figcaption>
             </figure>
-            <figure class="group">
+            <figure className="group">
               <div>
                 <img src={imgItem2} alt="check out members" />
               </div>
               <figcaption>
-                <h6 class="heading">Check Out Our Members!</h6>
+                <h6 className="heading">Check Out Our Members!</h6>
                 <p>
                   You can also check out our public e-business-cards (e.b.c.) to
                   see some of our members. {"\n\n"}Don't forget that not all
@@ -68,14 +51,14 @@ const Home = () => {
                   out to more people!
                 </p>
                 <footer>
-                  <a class="btn" href="/ebcards">
+                  <a className="btn" href="/ebcards">
                     View Cards
                   </a>
                 </footer>
               </figcaption>
             </figure>
           </div>
-          <div class="clear"></div>
+          <div className="clear"></div>
         </main>
       </div>
     </React.Fragment>

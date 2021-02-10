@@ -22,7 +22,7 @@ const EBCardItem = (props) => {
   };
 
   return (
-    <Card style={{ width: "16rem" }}>
+    <Card style={{ width: "16rem", margin: "10px" }}>
       <Card.Body>
         {auth.isLoggedIn && (
           <SubMenu

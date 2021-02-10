@@ -43,13 +43,13 @@ const Search = (props) => {
             variant="outline-success"
             style={{ margin: "0 0.5rem" }}
           >
-            Search
+            <i className="fas fa-search"></i>
           </Button>
           <Button 
             className="button-filter"
             onClick={props.clear} 
             variant="outline-danger">
-            Clear Filter
+            <i className="fas fa-times"></i>
           </Button>
         </Form>
       </Navbar.Collapse>

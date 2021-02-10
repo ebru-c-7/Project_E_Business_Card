@@ -90,13 +90,13 @@ const Portfolio = () => {
     };
 
     try {
-     await sendHttpRequest(
+      await sendHttpRequest(
         `${process.env.REACT_APP_BACKEND_URL}/ebcards/status/${ecid}`,
         "PATCH",
         null,
         headers
       );
-    changedCardsHandler();
+      changedCardsHandler();
     } catch (err) {
       console.log(err);
     }
@@ -110,9 +110,7 @@ const Portfolio = () => {
         null, //body
         { Authorization: "Bearer " + auth.token } //header
       );
-      setFavCards((prevCards) =>
-        prevCards.filter((card) => card.id !== ecid)
-      );
+      setFavCards((prevCards) => prevCards.filter((card) => card.id !== ecid));
     } catch (err) {
       console.log(err);
     }
@@ -121,13 +119,20 @@ const Portfolio = () => {
   return (
     <React.Fragment>
       <ErrorModal show={!!error} onHide={clearError} errorMessage={error} />
-      {isLoading && (
-        <div className="center">
-          <LoadingSpinner asOverlay />
-        </div>
-      )}
-      {!isLoading && loadedCards && (
-        <Container fluid style={{ position: "relative", top: "10vh" }}>
+
+      <Container
+        fluid
+        style={{
+          backgroundColor: "#e0dadae0",
+          minHeight: "50vh",
+          padding: "0px",
+        }}
+      >
+        {isLoading ? (
+          <div className="center">
+            <LoadingSpinner asOverlay />
+          </div>
+        ) : loadedCards ? (
           <Accordion defaultActiveKey="0">
             <Card>
               <Card.Header>
@@ -142,7 +147,7 @@ const Portfolio = () => {
               </Card.Header>
               <Accordion.Collapse eventKey="0">
                 <Card.Body>
-                  <Row className="cardGap justify-content-left">
+                  <Row className="justify-content-left" style={{margin: "0px 10px"}}>
                     <EBCardList
                       cards={loadedCards.filter((card) => card.active === true)}
                       onEdit={cardEditHandler}
@@ -166,7 +171,7 @@ const Portfolio = () => {
               </Card.Header>
               <Accordion.Collapse eventKey="1">
                 <Card.Body>
-                  <Row className="cardGap justify-content-left">
+                  <Row className="justify-content-left" style={{margin: "0px 10px"}}>
                     <EBCardList
                       cards={loadedCards.filter(
                         (card) => card.active === false
@@ -191,10 +196,10 @@ const Portfolio = () => {
               </Card.Header>
               <Accordion.Collapse eventKey="2">
                 <Card.Body>
-                  <Row className="cardGap justify-content-left">
-                  <EBCardList
+                  <Row className="justify-content-left" style={{margin: "0px 10px"}}>
+                    <EBCardList
                       cards={favCards.filter((card) => card.active === true)}
-                      favCards ={favCards.map((card) => card.id)}
+                      favCards={favCards.map((card) => card.id)}
                       onRemove={removeFromFavHandler}
                     />
                   </Row>
@@ -202,9 +207,13 @@ const Portfolio = () => {
               </Accordion.Collapse>
             </Card>
           </Accordion>
-        </Container>
-      )}
-      <Button className="btn-new-card fixed-bottom-btn" onClick={modalShowHandler}>
+        ) : null}
+      </Container>
+
+      <Button
+        className="btn-new-card fixed-bottom-btn"
+        onClick={modalShowHandler}
+      >
         Add New Card
       </Button>
       <NewCardModal

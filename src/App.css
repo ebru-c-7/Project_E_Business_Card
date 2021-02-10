@@ -1,0 +1,68 @@
+.bgded {
+    background-image: url("./assets/images/ready.jpg");
+}
+
+#copyright * {
+    color: white
+}
+
+#copyright a {
+    font-weight: bold;
+}
+
+#copyright a:hover {
+    text-decoration: underline !important;
+}
+
+.row5 {
+    margin-bottom: 55px !important;
+}
+
+.btn {
+    background-color: #9099AA;
+    border-color: #9099AA;
+}
+
+.btn:active, .btn:hover, .btn:focus {
+    background-color: #FFB900;
+    border-color: #FFB900;
+}
+
+.accordion-button {
+    font-weight: bold !important;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+    font-size: 1.1rem !important;
+    color: #212529 !important;
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.dropdown-item {
+    background-color: white !important;
+    color: #5F6F89 !important;
+    border: none !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.dropdown-item:focus, 
+.dropdown-item:hover, 
+.dropdown-item:active {
+    color: #FFB900 !important;
+}
+
+.accordion-button:hover, 
+.accordion-button:active, 
+.accordion-button:focus {
+    color: #FFB900 !important; 
+    text-decoration: none !important;
+    background-color: transparent !important;
+    border: none;
+}
+
+.dropdown-toggle:hover, 
+.dropdown-toggle:active, 
+.dropdown-toggle:focus  {
+    background-color: #FFB900 !important;
+    border-color: #FFB900 !important;
+}
