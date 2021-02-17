@@ -6,12 +6,13 @@ import Row from "react-bootstrap/Row";
 import { AuthContext } from "./../../shared/context/context";
 
 import EBCardList from "../components/EBCardList";
-import LoadingSpinner from "../../shared/UI/LoadingSpinner";
+// import LoadingSpinner from "../../shared/UI/LoadingSpinner";
 import useHttpt from "../../shared/hooks/http-hook";
 import ErrorModal from "../../shared/UI/ErrorModal";
 import Search from "../components/Search";
 
 import "../cards.css";
+import SkeletonCard from "../../shared/skeleton/SkeletonCard";
 
 const EBCards = () => {
   const auth = useContext(AuthContext);
@@ -109,9 +110,11 @@ const EBCards = () => {
       >
         <Row className="justify-content-center">
           {isLoading ? (
-            <div className="center">
-              <LoadingSpinner asOverlay />
-            </div>
+            <SkeletonCard />
+
+            // <div className="center">
+            //   <LoadingSpinner asOverlay />
+            // </div>
           ) : (
             <EBCardList
               favCards={favCards}
